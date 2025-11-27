@@ -34,7 +34,7 @@ public class RedisPubSubService implements MessageListener {
         ObjectMapper objectMapper = new ObjectMapper();
         try {
             ChatMessageDto chatMessageDto = objectMapper.readValue(payload, ChatMessageDto.class);
-            messageTemplate.convertAndSend("/v1/topic/"+chatMessageDto.getRoomId(), chatMessageDto);
+            messageTemplate.convertAndSend("/v1/chat/topic/"+chatMessageDto.getRoomId(), chatMessageDto);
         } catch (JsonProcessingException e) {
             throw new RuntimeException(e);
         }

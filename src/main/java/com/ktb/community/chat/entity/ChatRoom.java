@@ -28,7 +28,7 @@ public class ChatRoom extends Timestamped {
 
     @NotNull
     @Column(unique = true)
-    @Size(min = 2, max = 10)
+    @Size(min = 2, max = 50)
     private String name;
 
     @NotNull

@@ -54,7 +54,7 @@ public class StompHandler implements ChannelInterceptor {
             if (segments.length < 4) {
                 throw new BusinessException(ROOM_NOT_FOUND);
             }
-            Long roomId = Long.parseLong(segments[3]);
+            Long roomId = Long.parseLong(segments[4]);
 
 
             if(!chatServiceImpl.isRoomParticipant(userId, roomId)){
